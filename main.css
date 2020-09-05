@@ -1,7 +1,7 @@
 :root {
     --emphasis-color: #d94363;
     --text-color: #f8f8d8;
-    --highlight-color-light: #c6ce9e;
+    --highlight-color-light: #aab574;/*#c6ce9e*/;
     --highlight-color-dark: #4f3043;
 }
 
@@ -18,19 +18,11 @@ body {
     margin: 0;
 }
 
-.container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60vh 1fr 4rem;
-    grid-template-areas: "main" "projects" "footer";
-}
-
 .billboard {
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-area: main;
+    height: 60vh;
     text-align: center;
 }
 
@@ -60,19 +52,21 @@ body {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    grid-area: projects;
+    margin: 2rem 0;
 }
 
 .project {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 30vw;
+    width: 34vw;
 }
 
-.project:nth-child(2) {
-    margin-left: 3rem;
+.project-screenshot__container:hover,
+.project-screenshot__container:active {
+    box-shadow: 3px 3px 3px var(--highlight-color-light);
 }
 
 .project-screenshot__container {
@@ -81,6 +75,7 @@ body {
     display: block;
     height: 8rem;
     width: 8rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-screenshot__image {
@@ -94,13 +89,19 @@ body {
     width: 70%;
 }
 
+footer {
+    /* position: fixed;
+    bottom: 0; */
+    width: 100%;
+}
+
 .nav-links {
     display: flex;
     flex-flow: row wrap;
     grid-area: footer;
     justify-content: center;
-    margin: 0;
     padding-left: 0;
+    margin: 0.5rem;
 }
 
 .nav-link {
@@ -136,7 +137,7 @@ body {
 .credits {
     color: var(--highlight-color-light);
     font-size: 0.8rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
@@ -144,9 +145,24 @@ body {
     color: var(--text-color);
 }
 
+@media only screen and (max-width: 100rem) {
+    .project {
+        width: 45vw;
+    }
+}
+
 @media only screen and (max-width: 30rem) {
     .billboard-container {
         width: 90%;
+    }
+
+    .project {
+        width: 90vw;
+        margin: 1.5rem;
+    }
+
+    .project-description {
+        width: 90vw;
     }
 
     .nav-link span {
