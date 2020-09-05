@@ -18,6 +18,12 @@ body {
     margin: 0;
 }
 
+main {
+    display: block;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
 .billboard {
     display: flex;
     align-items: center;
@@ -90,8 +96,8 @@ body {
 }
 
 footer {
-    /* position: fixed;
-    bottom: 0; */
+    position: relative;
+    bottom: 5rem;
     width: 100%;
 }
 
@@ -167,6 +173,10 @@ footer {
 
     .nav-link span {
         display: none;
+    }
+
+    footer {
+        bottom: 0;
     }
 }
 
