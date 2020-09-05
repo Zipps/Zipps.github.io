@@ -1,0 +1,156 @@
+:root {
+    --emphasis-color: #d94363;
+    --text-color: #f8f8d8;
+    --highlight-color-light: #c6ce9e;
+    --highlight-color-dark: #4f3043;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+html {
+    background-color: #372d3a;
+    /* background-image: linear-gradient(to bottom right, #4f3043, #372d3a, #642635) */
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 1fr 4rem;
+    grid-template-areas: "main" "projects" "footer";
+}
+
+.billboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: main;
+    text-align: center;
+}
+
+.billboard-container {
+    display: inline-block;
+    width: 60%;
+}
+
+.billboard__header {
+    color: var(--emphasis-color);
+    font-size: 3rem;
+}
+
+.billboard svg {
+    height: 10vh;
+    width: auto;
+    fill: var(--highlight-color-light);
+}
+
+.billboard__content {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.projects {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    grid-area: projects;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30vw;
+}
+
+.project:nth-child(2) {
+    margin-left: 3rem;
+}
+
+.project-screenshot__container {
+    background: var(--highlight-color-light);
+    border: 3px solid var(--emphasis-color);
+    display: block;
+    height: 8rem;
+    width: 8rem;
+}
+
+.project-screenshot__image {
+
+}
+
+.project-description {
+    color: var(--text-color);
+    display: inline-block;
+    margin: auto;
+    width: 70%;
+}
+
+.nav-links {
+    display: flex;
+    flex-flow: row wrap;
+    grid-area: footer;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
+}
+
+.nav-link {
+    list-style: none;
+    padding: 0.1rem 0.2rem;
+}
+
+.nav-link a {
+    color: var(--text-color);
+    align-items: center;
+    display: flex;
+    fill: var(--emphasis-color);
+    font-weight: 700;
+    height: 3rem;
+    margin: 0 0.5rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav-link svg {
+    fill: inherit;
+    margin: 0 0.5rem;
+    height: 3rem;
+    width: auto;
+}
+
+.nav-link a:hover,
+.nav-link a:active {
+    color: var(--emphasis-color);
+    fill: var(--text-color);
+}
+
+.credits {
+    color: var(--highlight-color-light);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.credits a {
+    color: var(--text-color);
+}
+
+@media only screen and (max-width: 30rem) {
+    .billboard-container {
+        width: 90%;
+    }
+
+    .nav-link span {
+        display: none;
+    }
+}
+
