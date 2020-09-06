@@ -53,6 +53,14 @@ main {
     font-size: 1.5rem;
 }
 
+.projects-container {
+    text-align: center;
+}
+
+.projects-container__heading {
+    color: var(--emphasis-color);
+}
+
 .projects {
     display: flex;
     flex-flow: row wrap;
@@ -180,6 +188,10 @@ main {
 
     .billboard-container {
         width: 90%;
+    }
+
+    .projects-container {
+        height: 100vh;
     }
 
     .project {
