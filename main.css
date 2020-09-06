@@ -20,7 +20,7 @@ body {
 
 main {
     display: block;
-    min-height: 100vh;
+    min-height: 98vh;
     overflow: hidden;
 }
 
@@ -70,22 +70,44 @@ main {
     width: 34vw;
 }
 
-.project-screenshot__container:hover,
-.project-screenshot__container:active {
-    box-shadow: 3px 3px 3px var(--highlight-color-light);
-}
-
 .project-screenshot__container {
     background: var(--highlight-color-light);
     border: 3px solid var(--emphasis-color);
+    text-decoration: none;
     display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4rem;
     height: 8rem;
     width: 8rem;
     margin-bottom: 0.5rem;
 }
 
-.project-screenshot__image {
+.project-screenshot__cover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    transition: 0.5s ease;
+}
 
+.project-screenshot__cover span {
+    color: #eee;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.project-screenshot__container:hover .project-screenshot__cover {
+    height: 33%;
+}
+
+.project-screenshot__image {
+    height: 8rem;
+    width: 8rem;
 }
 
 .project-description {
@@ -95,19 +117,13 @@ main {
     width: 70%;
 }
 
-footer {
-    position: relative;
-    bottom: 5rem;
-    width: 100%;
-}
-
 .nav-links {
     display: flex;
     flex-flow: row wrap;
     grid-area: footer;
     justify-content: center;
     padding-left: 0;
-    margin: 0.5rem;
+    margin-top: 2.5rem;
 }
 
 .nav-link {
@@ -173,10 +189,6 @@ footer {
 
     .nav-link span {
         display: none;
-    }
-
-    footer {
-        bottom: 0;
     }
 }
 
